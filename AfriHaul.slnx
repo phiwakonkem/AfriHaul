@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="AfriHaul.API/AfriHaul.API.csproj" />
+  <Project Path="AfriHaul.Application/AfriHaul.Application.csproj" />
+  <Project Path="AfriHaul.Domain/AfriHaul.Domain.csproj" />
+  <Project Path="AfriHaul.Infrastructure/AfriHaul.Infrastructure.csproj" />
+</Solution>

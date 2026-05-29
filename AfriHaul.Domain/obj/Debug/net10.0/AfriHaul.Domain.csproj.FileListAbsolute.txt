@@ -1,0 +1,12 @@
+C:\Users\pizam\AfriHaul\AfriHaul.Domain\bin\Debug\net10.0\AfriHaul.Domain.deps.json
+C:\Users\pizam\AfriHaul\AfriHaul.Domain\bin\Debug\net10.0\AfriHaul.Domain.dll
+C:\Users\pizam\AfriHaul\AfriHaul.Domain\bin\Debug\net10.0\AfriHaul.Domain.pdb
+C:\Users\pizam\AfriHaul\AfriHaul.Domain\obj\Debug\net10.0\AfriHaul.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pizam\AfriHaul\AfriHaul.Domain\obj\Debug\net10.0\AfriHaul.Domain.AssemblyInfoInputs.cache
+C:\Users\pizam\AfriHaul\AfriHaul.Domain\obj\Debug\net10.0\AfriHaul.Domain.AssemblyInfo.cs
+C:\Users\pizam\AfriHaul\AfriHaul.Domain\obj\Debug\net10.0\AfriHaul.Domain.csproj.CoreCompileInputs.cache
+C:\Users\pizam\AfriHaul\AfriHaul.Domain\obj\Debug\net10.0\AfriHaul.Domain.sourcelink.json
+C:\Users\pizam\AfriHaul\AfriHaul.Domain\obj\Debug\net10.0\AfriHaul.Domain.dll
+C:\Users\pizam\AfriHaul\AfriHaul.Domain\obj\Debug\net10.0\refint\AfriHaul.Domain.dll
+C:\Users\pizam\AfriHaul\AfriHaul.Domain\obj\Debug\net10.0\AfriHaul.Domain.pdb
+C:\Users\pizam\AfriHaul\AfriHaul.Domain\obj\Debug\net10.0\ref\AfriHaul.Domain.dll
