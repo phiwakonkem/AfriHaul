@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AfriHaul.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7e240249d24e06157440933b221658a5c019cd5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80299ef3e5cba91f680d54258a0fcb2bbd4b9db9")]
 [assembly: System.Reflection.AssemblyProductAttribute("AfriHaul.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AfriHaul.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
