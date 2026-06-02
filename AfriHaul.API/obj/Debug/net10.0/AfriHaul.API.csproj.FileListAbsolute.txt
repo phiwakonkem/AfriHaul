@@ -130,3 +130,6 @@ C:\Users\pizam\AfriHaul\AfriHaul.API\obj\Debug\net10.0\refint\AfriHaul.API.dll
 C:\Users\pizam\AfriHaul\AfriHaul.API\obj\Debug\net10.0\AfriHaul.API.pdb
 C:\Users\pizam\AfriHaul\AfriHaul.API\obj\Debug\net10.0\AfriHaul.API.genruntimeconfig.cache
 C:\Users\pizam\AfriHaul\AfriHaul.API\obj\Debug\net10.0\ref\AfriHaul.API.dll
+C:\Users\pizam\AfriHaul\AfriHaul.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\pizam\AfriHaul\AfriHaul.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\pizam\AfriHaul\AfriHaul.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
