@@ -8,8 +8,7 @@ public class AfriHaulDbContextFactory : IDesignTimeDbContextFactory<AfriHaulDbCo
     public AfriHaulDbContext CreateDbContext(string[] args)
     {
         var optionsBuilder = new DbContextOptionsBuilder<AfriHaulDbContext>();
-        optionsBuilder.UseNpgsql(
-            "Host=localhost;Port=5432;Database=afrihaul;Username=postgres;Password=030526");
+        optionsBuilder.UseSqlite("Data Source=afrihaul.db");
 
         return new AfriHaulDbContext(optionsBuilder.Options);
     }
