@@ -1,0 +1,105 @@
+<div class="max-w-2xl mx-auto px-8 py-10">
+  <div class="mb-8">
+    <h1 class="text-3xl font-bold text-white mb-2">New Shipment</h1>
+    <p class="text-gray-400">Post a load and get matched with verified carriers</p>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()"
+        class="bg-gray-900 border border-gray-800 rounded-xl p-8 flex flex-col gap-6">
+
+    @if (error()) {
+      <div class="bg-rose-900 border border-rose-700 text-rose-300 text-sm px-4 py-3 rounded-lg">
+        {{ error() }}
+      </div>
+    }
+
+    <!-- Origin -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">📍 Origin</h3>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="col-span-2">
+          <label class="text-gray-400 text-xs mb-1 block">Landmark / Area Description</label>
+          <input formControlName="originLandmark"
+                 placeholder="e.g. Near Soweto Mall, Johannesburg"
+                 class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm outline-none focus:border-orange-500 transition-colors" />
+        </div>
+        <div>
+          <label class="text-gray-400 text-xs mb-1 block">City</label>
+          <input formControlName="originCity"
+                 placeholder="Johannesburg"
+                 class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm outline-none focus:border-orange-500 transition-colors" />
+        </div>
+        <div>
+          <label class="text-gray-400 text-xs mb-1 block">Country</label>
+          <select formControlName="originCountry"
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm outline-none focus:border-orange-500 transition-colors">
+            @for (c of countries; track c) {
+              <option [value]="c">{{ c }}</option>
+            }
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Destination -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">🎯 Destination</h3>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="col-span-2">
+          <label class="text-gray-400 text-xs mb-1 block">Landmark / Area Description</label>
+          <input formControlName="destinationLandmark"
+                 placeholder="e.g. Near Beit Bridge Border Post"
+                 class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm outline-none focus:border-orange-500 transition-colors" />
+        </div>
+        <div>
+          <label class="text-gray-400 text-xs mb-1 block">City</label>
+          <input formControlName="destinationCity"
+                 placeholder="Harare"
+                 class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm outline-none focus:border-orange-500 transition-colors" />
+        </div>
+        <div>
+          <label class="text-gray-400 text-xs mb-1 block">Country</label>
+          <select formControlName="destinationCountry"
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm outline-none focus:border-orange-500 transition-colors">
+            @for (c of countries; track c) {
+              <option [value]="c">{{ c }}</option>
+            }
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cargo Details -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">📦 Cargo Details</h3>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="col-span-2">
+          <label class="text-gray-400 text-xs mb-1 block">Cargo Description</label>
+          <input formControlName="cargoDescription"
+                 placeholder="e.g. Construction materials, electronics"
+                 class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm outline-none focus:border-orange-500 transition-colors" />
+        </div>
+        <div>
+          <label class="text-gray-400 text-xs mb-1 block">Weight (tons)</label>
+          <input formControlName="weightTons" type="number" min="0.1" step="0.1"
+                 class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm outline-none focus:border-orange-500 transition-colors" />
+        </div>
+        <div>
+          <label class="text-gray-400 text-xs mb-1 block">Vehicle Type Required</label>
+          <select formControlName="requiredVehicleType"
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white text-sm outline-none focus:border-orange-500 transition-colors">
+            @for (v of vehicleTypes; track v) {
+              <option [value]="v">{{ v }}</option>
+            }
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit"
+            [disabled]="form.invalid || submitting()"
+            class="bg-orange-500 hover:bg-orange-600 disabled:bg-gray-700 disabled:text-gray-500 text-white font-semibold py-3 rounded-lg transition-colors">
+      {{ submitting() ? 'Posting Shipment...' : 'Post Shipment' }}
+    </button>
+  </form>
+</div>

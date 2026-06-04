@@ -1,0 +1,87 @@
+<div class="max-w-7xl mx-auto px-8 py-10">
+  <!-- Header -->
+  <div class="mb-10">
+    <h1 class="text-3xl font-bold text-white mb-2">Dashboard</h1>
+    <p class="text-gray-400">Welcome to AfriHaul — Connecting Africa's logistics network</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="grid grid-cols-4 gap-6 mb-10">
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+      <p class="text-gray-400 text-sm mb-1">Pending Shipments</p>
+      <p class="text-3xl font-bold text-white">{{ shipments().length }}</p>
+      <p class="text-orange-400 text-xs mt-2">↑ Active loads</p>
+    </div>
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+      <p class="text-gray-400 text-sm mb-1">Countries Covered</p>
+      <p class="text-3xl font-bold text-white">14</p>
+      <p class="text-emerald-400 text-xs mt-2">↑ SADC + East Africa</p>
+    </div>
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+      <p class="text-gray-400 text-sm mb-1">Active Carriers</p>
+      <p class="text-3xl font-bold text-white">0</p>
+      <p class="text-gray-500 text-xs mt-2">Register carriers</p>
+    </div>
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+      <p class="text-gray-400 text-sm mb-1">Completed Today</p>
+      <p class="text-3xl font-bold text-white">0</p>
+      <p class="text-gray-500 text-xs mt-2">No deliveries yet</p>
+    </div>
+  </div>
+
+  <!-- Pending Shipments -->
+  <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-lg font-semibold text-white">Pending Shipments</h2>
+      <a routerLink="/shipments/create"
+         class="bg-orange-500 hover:bg-orange-600 text-white text-sm px-4 py-2 rounded-lg transition-colors">
+        + New Shipment
+      </a>
+    </div>
+
+    @if (loading()) {
+      <div class="text-center py-12 text-gray-500">Loading shipments...</div>
+    } @else if (shipments().length === 0) {
+      <div class="text-center py-12">
+        <p class="text-gray-500 mb-4">No pending shipments yet</p>
+        <a routerLink="/shipments/create"
+           class="text-orange-400 hover:text-orange-300 text-sm">
+          Create your first shipment →
+        </a>
+      </div>
+    } @else {
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="border-b border-gray-800">
+              <th class="text-left text-gray-400 text-xs font-medium pb-3">Origin</th>
+              <th class="text-left text-gray-400 text-xs font-medium pb-3">Destination</th>
+              <th class="text-left text-gray-400 text-xs font-medium pb-3">Cargo</th>
+              <th class="text-left text-gray-400 text-xs font-medium pb-3">Weight</th>
+              <th class="text-left text-gray-400 text-xs font-medium pb-3">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (shipment of shipments(); track shipment.id) {
+              <tr class="border-b border-gray-800 hover:bg-gray-800 transition-colors">
+                <td class="py-4 text-white text-sm">
+                  {{ shipment.originCity }}, {{ shipment.originCountry }}
+                </td>
+                <td class="py-4 text-white text-sm">
+                  {{ shipment.destinationCity }}, {{ shipment.destinationCountry }}
+                </td>
+                <td class="py-4 text-gray-400 text-sm">{{ shipment.cargoDescription }}</td>
+                <td class="py-4 text-gray-400 text-sm">{{ shipment.weightTons }}t</td>
+                <td class="py-4">
+                  <span class="bg-amber-900 text-amber-300 text-xs px-2 py-1 rounded-full">
+                    {{ shipment.status }}
+                  </span>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    }
+  </div>
+</div>

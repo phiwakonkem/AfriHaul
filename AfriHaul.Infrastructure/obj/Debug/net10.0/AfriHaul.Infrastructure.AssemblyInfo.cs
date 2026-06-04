@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AfriHaul.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+106236249a825bc30e9084f5feb64fbc16c90fec")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2318d2a6785ec889b5e215938877ecb913aee041")]
 [assembly: System.Reflection.AssemblyProductAttribute("AfriHaul.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AfriHaul.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
