@@ -10,21 +10,33 @@
     </a>
   </div>
 
+  <!-- Filter tabs -->
+  <div class="flex gap-2 mb-6">
+    @for (status of statuses; track status) {
+      <button
+        (click)="activeStatus.set(status)"
+        [class]="activeStatus() === status
+          ? 'bg-orange-500 text-white text-xs px-4 py-2 rounded-full'
+          : 'bg-gray-800 text-gray-400 hover:text-white text-xs px-4 py-2 rounded-full transition-colors'">
+        {{ status }}
+      </button>
+    }
+  </div>
+
   @if (loading()) {
     <div class="text-center py-20 text-gray-500">Loading shipments...</div>
-  } @else if (shipments().length === 0) {
+  } @else if (filteredShipments().length === 0) {
     <div class="bg-gray-900 border border-gray-800 rounded-xl p-20 text-center">
-      <p class="text-gray-400 text-lg mb-2">No shipments yet</p>
-      <p class="text-gray-600 text-sm mb-6">Post your first load and get matched with verified carriers</p>
+      <p class="text-gray-400 text-lg mb-2">No shipments found</p>
       <a routerLink="/shipments/create"
-         class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg text-sm transition-colors">
+         class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg text-sm transition-colors mt-4 inline-block">
         Post a Shipment
       </a>
     </div>
   } @else {
     <div class="grid gap-4">
-      @for (shipment of shipments(); track shipment.id) {
-        <div class="bg-gray-900 border border-gray-800 hover:border-orange-500 rounded-xl p-6 transition-colors">
+      @for (shipment of filteredShipments(); track shipment.id) {
+        <div class="bg-gray-900 border border-gray-800 hover:border-orange-500 rounded-xl p-6 transition-colors cursor-pointer">
           <div class="flex items-start justify-between">
             <div class="flex items-center gap-4">
               <div class="w-10 h-10 bg-orange-500/10 rounded-lg flex items-center justify-center text-orange-400 font-bold text-sm">

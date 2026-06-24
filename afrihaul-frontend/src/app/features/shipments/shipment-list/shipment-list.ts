@@ -1,7 +1,7 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ShipmentService, ShipmentDto } from '../../../core/services/shipment';
 import { DatePipe } from '@angular/common';
+import { ShipmentService, ShipmentDto } from '../../../core/services/shipment';
 
 @Component({
   selector: 'app-shipment-list',
@@ -14,6 +14,13 @@ export class ShipmentList implements OnInit {
   private shipmentService = inject(ShipmentService);
   shipments = signal<ShipmentDto[]>([]);
   loading = signal(true);
+  activeStatus = signal('All');
+  statuses = ['All', 'Pending', 'Matched', 'InTransit', 'Delivered'];
+
+  filteredShipments = computed(() => {
+    if (this.activeStatus() === 'All') return this.shipments();
+    return this.shipments().filter(s => s.status === this.activeStatus());
+  });
 
   ngOnInit() {
     this.shipmentService.getPendingShipments().subscribe({
